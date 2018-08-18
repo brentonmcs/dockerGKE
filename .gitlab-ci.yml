@@ -7,8 +7,7 @@ variables:
 
 stages:
   - build
-  - production
-  - cleanup
+  - production  
 
 build:
   stage: build
@@ -23,7 +22,8 @@ build:
   only:
     - branches
 
-.production: &production_template
+
+production:
   stage: production
   script:    
     - install_dependencies
@@ -40,19 +40,10 @@ build:
     url: http://$CI_PROJECT_PATH_SLUG.$AUTO_DEVOPS_DOMAIN
   artifacts:
     paths: [environment_url.txt]
-
-production:
-  <<: *production_template
   only:
     refs:
       - master
-    kubernetes: active
-  except:
-    variables:
-      - $STAGING_ENABLED
-      - $CANARY_ENABLED
-      - $INCREMENTAL_ROLLOUT_ENABLED
-
+    kubernetes: active  
 # ---------------------------------------------------------------------------
 
 .auto_devops: &auto_devops |
