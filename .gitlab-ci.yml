@@ -1,11 +1,16 @@
-image : microsoft/dotnet:2.1-sdk
+image: docker:latest
+
+variables:
+  DOCKER_DRIVER: overlay
+  CONTAINER_TEST_IMAGE: brentonmcs/employsure:$CI_BUILD_REF_NAME
+
+services:
+- docker:dind
+
 stages:
-  - build
-before_script:
-  - 'dotnet restore'
+- build
+
 build:
- stage: build
- script:
-  - 'dotnet build'
- only:
-   - master
+  stage: build
+  script:
+  - docker build -t $CONTAINER_TEST_IMAGE .
