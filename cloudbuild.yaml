@@ -13,4 +13,3 @@ steps:
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=australia-southeast1-a'
   - 'CLOUDSDK_CONTAINER_CLUSTER=gke-employsure-default-pool-b1828915-psr1'
-	
