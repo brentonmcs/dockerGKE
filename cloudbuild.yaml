@@ -12,4 +12,4 @@ steps:
   - my-container=gcr.io/sapient-zodiac-213700/testapp:$REVISION_ID
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=australia-southeast1-a'
-  - 'CLOUDSDK_CONTAINER_CLUSTER=gke-employsure-default-pool-b1828915-psr1'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=employsure'
