@@ -9,7 +9,8 @@ steps:
   - image
   - deployment
   - deployment/production
-  - my-container=gcr.io/sapient-zodiac-213700/testApp:$REVISION_ID
+  - my-container=gcr.io/sapient-zodiac-213700/testApp:$REVISION_IDg
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=australia-southeast1-a'
   - 'CLOUDSDK_CONTAINER_CLUSTER=gke-employsure-default-pool-b1828915-psr1'
+	
